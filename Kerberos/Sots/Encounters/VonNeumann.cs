@@ -595,7 +595,9 @@ namespace Kerberos.Sots.Encounters
 			if (fleetInfo == null)
 			{
 				DesignInfo designInfo = game.GameDatabase.GetDesignInfo(VonNeumann.StaticShipDesigns[VonNeumann.VonNeumannShipDesigns.CollectorMothership].DesignId);
-				if ((double)vi.Resources > (double)designInfo.ProductionCost / (double)game.AssetDatabase.DefaultStratModifiers[StratModifiers.OverharvestModifier])
+				double overharvestModifier = Convert.ToDouble(game.AssetDatabase.DefaultStratModifiers[StratModifiers.OverharvestModifier]);
+
+				if ((double)vi.Resources > (double)designInfo.ProductionCost / overharvestModifier)
 				{
 					vi.Resources -= (int)((double)designInfo.ProductionCost / (double)game.AssetDatabase.DefaultStratModifiers[StratModifiers.OverharvestModifier]);
 					vi.FleetId = new int?(game.GameDatabase.InsertFleet(this.PlayerId, 0, vi.SystemId, vi.SystemId, "Von Neumann Collector", FleetType.FL_NORMAL));
