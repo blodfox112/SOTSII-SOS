@@ -96,7 +96,7 @@ namespace Kerberos.Sots.UI
 						this._currentSettings.SpeechVolume = int.Parse(msgParams[0]);
 						this._app.PostSetVolumeSpeech(this._currentSettings.SpeechVolume);
 						this._app.PostEnableSpeechSounds(true);
-						this._app.PostRequestSpeech("COMBAT_005-01_human_SelectionAffirmed", 1000, 120, 0.0f);
+						this._app.PostRequestSpeech("STRAT_001-07_tarkas_SurveyMissionConfirmation", 1000, 120, 0.0f);
 						break;
 					case "audioEffectsVolumeValueSlider":
 						this._app.UI.SetText("audioEffectsVolumeValueSliderLabel", string.Format("{0}%", (object)msgParams[0]));
