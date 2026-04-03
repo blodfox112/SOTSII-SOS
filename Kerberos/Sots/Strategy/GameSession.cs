@@ -4800,6 +4800,7 @@ namespace Kerberos.Sots.Strategy
 					{
 						EventType = TurnEventType.EV_STATION_UPGRADED,
 						EventMessage = TurnEventMessage.EM_STATION_UPGRADED,
+						EventSoundCueName = this.GetUpgradeStationSoundCueName(stationDesignInfo),
 						TurnNumber = this._db.GetTurnCount(),
 						PlayerID = fleet.PlayerID,
 						SystemID = fleet.SystemID,
