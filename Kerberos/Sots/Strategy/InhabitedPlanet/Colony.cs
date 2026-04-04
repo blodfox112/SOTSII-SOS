@@ -1118,6 +1118,7 @@ namespace Kerberos.Sots.Strategy.InhabitedPlanet
 		  out bool achievedSuperWorld,
 		  bool isSupplyRun = false)
 		{
+			PlayerInfo playerInfo1 = sim.GameDatabase.GetPlayerInfo(colony.PlayerID);
 			OrbitalObjectInfo orbitalObjectInfo = sim.GameDatabase.GetOrbitalObjectInfo(planet.ID);
 			if (!isSupplyRun && (double)colony.OverharvestRate > (double)sim.GameDatabase.GetStratModifier<float>(StratModifiers.MinOverharvestRate, colony.PlayerID))
 			{
@@ -1132,6 +1133,7 @@ namespace Kerberos.Sots.Strategy.InhabitedPlanet
 						OrbitalID = colony.OrbitalObjectID,
 						ColonyID = colony.ID,
 						TurnNumber = sim.GameDatabase.GetTurnCount(),
+						EventSoundCueName = string.Format("STRAT_071-01_{0}_OverharvestCriticalWarning", sim.GameDatabase.GetFactionName(sim.GameDatabase.GetPlayerFactionID(playerInfo1.ID))),
 						ShowsDialog = false
 					});
 					colony.TurnsOverharvested = 0;
@@ -1143,7 +1145,6 @@ namespace Kerberos.Sots.Strategy.InhabitedPlanet
 			achievedSuperWorld = false;
 			bool flag1 = false;
 			civPopulation = sim.GameDatabase.GetCivilianPopulations(planet.ID).ToList<ColonyFactionInfo>();
-			PlayerInfo playerInfo1 = sim.GameDatabase.GetPlayerInfo(colony.PlayerID);
 			bool flag2 = sim.AssetDatabase.GetFaction(playerInfo1.FactionID).HasSlaves();
 			if (!playerInfo1.isAIRebellionPlayer)
 			{
