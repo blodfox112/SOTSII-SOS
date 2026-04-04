@@ -8828,16 +8828,16 @@ namespace Kerberos.Sots.Strategy
 							str = string.Format("STRAT_019-01_{0}_WayStationComplete", (object)name);
 							break;
 						case 2:
-							str = string.Format("STRAT_020-01_{0}_WayStationUpgradedToTradingPost", (object)name);
+							str = string.Format("STRAT_020-01_{0}_WayStationUpgradedtoTradingPost", (object)name);
 							break;
 						case 3:
-							str = string.Format("STRAT_021-01_{0}_TradingPostUpgradedToMerchanterStation", (object)name);
+							str = string.Format("STRAT_021-01_{0}_TradingPostUpgradedtoMerchanterStation", (object)name);
 							break;
 						case 4:
-							str = string.Format("STRAT_022-01_{0}_MerchanterStationUpgradedToNexus", (object)name);
+							str = string.Format("STRAT_022-01_{0}_MerchanterStationUpgradedtoNexus", (object)name);
 							break;
 						case 5:
-							str = string.Format("STRAT_023-01_{0}_NexusUpgradedToStarCity", (object)name);
+							str = string.Format("STRAT_023-01_{0}_NexusUpgradedtoStarCity", (object)name);
 							break;
 					}
 					break;
@@ -8848,7 +8848,7 @@ namespace Kerberos.Sots.Strategy
 							str = string.Format("STRAT_063-01_{0}_CustomsStationComplete", (object)name);
 							break;
 						case 2:
-							str = string.Format("STRAT_111-01_{0}_CustomsStationUpgradedToConsulate", (object)name);
+							str = string.Format("STRAT_064-01_{0}_CustomsStationUpgradedToConsulate", (object)name);
 							break;
 						case 3:
 							str = string.Format("STRAT_064-01_{0}_ConsulateUpgradedToEmbassy", (object)name);
